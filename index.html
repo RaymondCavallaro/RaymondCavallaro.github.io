@@ -5,10 +5,7 @@
 $(function() {
  var $btnrun = $("#btnrun");
  var $txtcode = $("#txtcode");
- $txtcode.val("teste");
- $btnrun.val($txtcode.val());
  $btnrun.click(function() {
-  $btnrun.val($txtcode.val());
   eval($txtcode.val());
  });
 })
