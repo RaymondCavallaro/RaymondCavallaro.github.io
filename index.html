@@ -6,6 +6,7 @@ $.ready(function() {
  var $btnrun = $("#btnrun");
  var $txtcode = $("#txtcode");
  $btnrun.click(function() {
+  alert($txtcode.val());
   eval($txtcode.val());
  });
 })
@@ -14,6 +15,6 @@ $.ready(function() {
 <body>
  <textarea id="txtcode"></textarea>
 <input type="button" id="btnrun" />
- v1
+ v2
 </body>
 </html>
