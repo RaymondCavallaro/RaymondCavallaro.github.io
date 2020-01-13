@@ -6,7 +6,7 @@ $.ready(function() {
  var $btnrun = $("#btnrun");
  var $txtcode = $("#txtcode");
  $btncode.click(function() {
-  $.eval($txtcode.val());
+  eval($txtcode.val());
  });
 })
 </script>
