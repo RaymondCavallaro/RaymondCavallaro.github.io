@@ -1,4 +1,4 @@
 ---
-redirect_from: "/foo/"
+permalink: "/foo/index.html"
 ---
 teste
