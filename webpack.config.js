@@ -1,11 +1,24 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
 
-module.exports = {
+module.exports = [ {
+	entryName: 'index',
+	src : './src/index.js',
+	htmlDestPath : '',
+}, {
+	entryName: 'tryjs',
+	src : './src/tryjs/index.js',
+	htmlDestPath : 'tryjs/',
+} ].map(entries => ({
 	entry : {
-		'index': './src/index.js'
+		'index' : entries.src
 	},
 	output : {
-		filename : '[name].bundle.js',
-		path : path.resolve(__dirname, 'build'),
+		filename : 'build/' + entries.entryName + '.[contenthash].bundle.js',
+		path : path.resolve(__dirname),
 	},
-};
+	plugins : [ new HtmlWebpackPlugin({
+		inject : 'head',
+		filename : entries.htmlDestPath + 'index.html'
+	}) ]
+}));
