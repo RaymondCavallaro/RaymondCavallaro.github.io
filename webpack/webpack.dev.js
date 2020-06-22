@@ -1,8 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const confs = require('./config-webpack');
+const configFunction = require('./webpack.comum');
 
-module.exports = confs.flatMap(conf => conf.modules.map(entries => ({
+let conf = configFunction('dev');
+
+module.exports = conf.modules.map(entries => ({
 	entry : {
 		'index' : entries.src
 	},
@@ -20,4 +22,4 @@ module.exports = confs.flatMap(conf => conf.modules.map(entries => ({
 		inject : 'head',
 		filename : entries.htmlDestPath + 'index.html'
 	}) ]
-})));
+}));

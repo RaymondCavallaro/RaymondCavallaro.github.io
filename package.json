@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "start": "http-server ./RaymondCavallaro.github.io"
+    "build": "webpack --config webpack/webpack.dev.js",
+    "start": "http-server ./dist"
   },
   "repository": {
     "type": "git",
